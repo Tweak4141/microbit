@@ -2,7 +2,7 @@ let btEnabled = false;
 let persistentDisplay = false;
 let temp = updateTemp()
 basic.forever(function () {
-    updateTemp();
+    temp = updateTemp();
     btEnabled ? broadcastTemp() : led.unplot(0, 0); // if broadcasting temp via eddy beacon is enabled.
     if (persistentDisplay) basic.showNumber(temp);
     input.onButtonPressed(Button.A, () => {
